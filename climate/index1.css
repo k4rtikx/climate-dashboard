@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Nature-inspired green-blue palette for light mode */
+        --background: 0.98 0.01 160;
+        --foreground: 0.25 0.02 200;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 200;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 200;
+        
+        /* Primary: Ocean blue */
+        --primary: 0.55 0.15 220;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Forest green */
+        --secondary: 0.65 0.12 150;
+        --secondary-foreground: 0.99 0 0;
+        
+        /* Muted tones */
+        --muted: 0.95 0.01 160;
+        --muted-foreground: 0.50 0.02 200;
+        
+        /* Accent: Teal */
+        --accent: 0.70 0.13 180;
+        --accent-foreground: 0.99 0 0;
+        
+        /* Destructive: Warm red for warnings */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0 0;
+        
+        /* Borders and inputs */
+        --border: 0.88 0.01 160;
+        --input: 0.88 0.01 160;
+        --ring: 0.55 0.15 220;
+        
+        /* Chart colors - nature palette */
+        --chart-1: 0.65 0.12 150;
+        --chart-2: 0.55 0.15 220;
+        --chart-3: 0.70 0.13 180;
+        --chart-4: 0.75 0.15 90;
+        --chart-5: 0.60 0.18 260;
+        
+        /* Success and warning */
+        --success: 0.65 0.12 150;
+        --warning: 0.70 0.18 60;
+    }
+
+    .dark {
+        /* Dark mode: Deep ocean and forest tones */
+        --background: 0.15 0.02 220;
+        --foreground: 0.95 0.01 160;
+        --card: 0.20 0.02 220;
+        --card-foreground: 0.95 0.01 160;
+        --popover: 0.18 0.02 220;
+        --popover-foreground: 0.95 0.01 160;
+        
+        /* Primary: Bright ocean blue */
+        --primary: 0.65 0.18 220;
+        --primary-foreground: 0.15 0.02 220;
+        
+        /* Secondary: Vibrant green */
+        --secondary: 0.70 0.15 150;
+        --secondary-foreground: 0.15 0.02 220;
+        
+        /* Muted */
+        --muted: 0.25 0.02 220;
+        --muted-foreground: 0.65 0.02 200;
+        
+        /* Accent: Bright teal */
+        --accent: 0.75 0.15 180;
+        --accent-foreground: 0.15 0.02 220;
+        
+        /* Destructive */
+        --destructive: 0.60 0.25 25;
+        --destructive-foreground: 0.95 0.01 160;
+        
+        /* Borders */
+        --border: 0.30 0.02 220;
+        --input: 0.30 0.02 220;
+        --ring: 0.65 0.18 220;
+        
+        /* Chart colors - vibrant dark mode */
+        --chart-1: 0.70 0.15 150;
+        --chart-2: 0.65 0.18 220;
+        --chart-3: 0.75 0.15 180;
+        --chart-4: 0.80 0.18 90;
+        --chart-5: 0.70 0.20 260;
+        
+        /* Success and warning */
+        --success: 0.70 0.15 150;
+        --warning: 0.75 0.20 60;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-muted;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-muted-foreground/30 rounded-full;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-muted-foreground/50;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
